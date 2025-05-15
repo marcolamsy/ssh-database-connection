@@ -43,7 +43,7 @@ export default function Dashboard() {
       type: "PDF Document",
       size: "977 KB",
       lastModified: "2025-05-18",
-      path: "調查報告.pdf"
+      path: "investigation_report.pdf"
     },
     {
       id: "file4",
