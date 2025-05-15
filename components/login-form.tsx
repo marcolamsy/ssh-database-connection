@@ -25,7 +25,7 @@ export default function LoginForm() {
     // Simulate authentication - in a real app, you would validate against a backend
     try {
       // For demo purposes, accept any email with a password of "admin123"
-      if (password === "admin123") {
+      if (password === "ssh20250518") {
         // Store authentication state
         localStorage.setItem("isAuthenticated", "true")
 
