@@ -33,7 +33,7 @@ export default function Dashboard() {
       type: "PDF Document",
       size: "921 KB",
       lastModified: "2025-05-18",
-      path: "18052025_Leo Club Shrson Hill Annual Dinner_Ballroom_11 tables.pdf"
+      path: "tables.pdf"
     },
     {
       id: "file3",
