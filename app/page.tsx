@@ -11,7 +11,7 @@ export default function Home() {
           </div>
           <LoginForm />
         </div>
-        <p className="text-center text-sm text-gray-500 mt-4">壽臣山青年獅子會資料庫</p>
+        <p className="text-center text-sm text-gray-500 mt-4">香港壽臣山青年獅子會資料庫</p>
       </div>
     </div>
   )
