@@ -17,7 +17,7 @@ export default function Dashboard() {
   const files = [
     {
       id: "file1",
-      name: "任務1提示 (1)",
+      name: "會員資料",
       description: "",
       password: "@20100628ssh!",
       type: "PDF Document",
@@ -27,7 +27,7 @@ export default function Dashboard() {
     },
     {
       id: "file2",
-      name: "任務1提示 (2)",
+      name: "會場資料",
       description: "",
       password: "@20100628ssh!",
       type: "PDF Document",
@@ -37,7 +37,7 @@ export default function Dashboard() {
     },
     {
       id: "file3",
-      name: "任務2提示 (1)",
+      name: "線索分析",
       description: "",
       password: "96583905",
       type: "PDF Document",
@@ -47,7 +47,7 @@ export default function Dashboard() {
     },
     {
       id: "file4",
-      name: "任務2提示 (2)",
+      name: "線索分析",
       description: "",
       password: "96583905",
       type: "Image Document",
@@ -87,7 +87,7 @@ export default function Dashboard() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center">
             <Database className="h-6 w-6 text-slate-700 mr-2" />
-            <h1 className="text-xl font-bold text-slate-800">壽臣山青年獅子會資料庫</h1>
+            <h1 className="text-xl font-bold text-slate-800">香港壽臣山青年獅子會資料庫</h1>
           </div>
           <Button variant="outline" size="sm" onClick={handleLogout}>
             <LogOut className="h-4 w-4 mr-2" />
