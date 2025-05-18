@@ -81,11 +81,13 @@ export default function PasswordDialog({ isOpen, onClose, file }: PasswordDialog
       open={isOpen}
       onOpenChange={(open) => {
         if (!open) {
-          onClose()
+          // Reset all states when dialog closes
           setPassword("")
           setError("")
           setSuccess(false)
           setShowPassword(false)
+          setLoading(false)
+          onClose()
         }
       }}
     >
@@ -115,7 +117,18 @@ export default function PasswordDialog({ isOpen, onClose, file }: PasswordDialog
                   "Open File"
                 )}
               </Button>
-              <Button variant="outline" onClick={onClose} disabled={loading}>
+              <Button 
+                variant="outline" 
+                onClick={() => {
+                  setSuccess(false)
+                  setPassword("")
+                  setError("")
+                  setShowPassword(false)
+                  setLoading(false)
+                  onClose()
+                }} 
+                disabled={loading}
+              >
                 Close
               </Button>
             </div>
