@@ -37,7 +37,7 @@ export default function Dashboard() {
     },
     {
       id: "file3",
-      name: "線索分析",
+      name: "秀青2024分析報告",
       description: "",
       password: "96583905",
       type: "PDF Document",
@@ -47,7 +47,7 @@ export default function Dashboard() {
     },
     {
       id: "file4",
-      name: "線索分析",
+      name: "2024培訓營相片",
       description: "",
       password: "96583905",
       type: "Image Document",

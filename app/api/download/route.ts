@@ -15,7 +15,7 @@ export async function GET(request: Request) {
     const sanitizedFilename = path.basename(filename)
     const filePath = path.join(process.cwd(), "files", sanitizedFilename)
 
-    console.log("Attempting to download file:", {
+    console.log("Attempting to open file:", {
       requestedFilename: filename,
       sanitizedFilename,
       filePath,
@@ -68,13 +68,13 @@ export async function GET(request: Request) {
     // Set appropriate headers
     const headers = new Headers()
     headers.set("Content-Type", contentType)
-    headers.set("Content-Disposition", `attachment; filename="${sanitizedFilename}"`)
+    headers.set("Content-Disposition", `inline; filename="${sanitizedFilename}"`)
 
     return new NextResponse(fileBuffer, {
       headers,
     })
   } catch (error) {
-    console.error("Error downloading file:", {
+    console.error("Error opening file:", {
       error: error instanceof Error ? error.message : "Unknown error",
       stack: error instanceof Error ? error.stack : undefined,
     })

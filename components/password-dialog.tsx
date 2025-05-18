@@ -61,28 +61,16 @@ export default function PasswordDialog({ isOpen, onClose, file }: PasswordDialog
       // Show loading state
       setLoading(true)
 
-      // Fetch the file from the API
-      const response = await fetch(`/api/download?filename=${encodeURIComponent(file.path)}`)
+      // Open file in new tab using the correct path
+      window.open(`/api/download?filename=${encodeURIComponent(file.path)}`, '_blank')
       
-      if (!response.ok) {
-        throw new Error('Failed to download file')
-      }
-
-      // Get the blob from the response
-      const blob = await response.blob()
-      
-      // Create download link
-      const url = window.URL.createObjectURL(blob)
-      const a = document.createElement("a")
-      a.href = url
-      a.download = file.name
-      document.body.appendChild(a)
-      a.click()
-      window.URL.revokeObjectURL(url)
-      document.body.removeChild(a)
+      // Close the dialog after a short delay
+      setTimeout(() => {
+        onClose()
+      }, 1000)
     } catch (error) {
-      console.error('Error downloading file:', error)
-      setError('Failed to download file. Please try again.')
+      console.error('Error opening file:', error)
+      setError('Failed to open file. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -121,10 +109,10 @@ export default function PasswordDialog({ isOpen, onClose, file }: PasswordDialog
                 {loading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Downloading...
+                    Opening...
                   </>
                 ) : (
-                  "Download File"
+                  "Open File"
                 )}
               </Button>
               <Button variant="outline" onClick={onClose} disabled={loading}>
